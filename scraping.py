@@ -1,5 +1,5 @@
 # setup libraries
-from splinter import Browser
+from splinter import Browser, browser
 from bs4 import BeautifulSoup as soup
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
@@ -67,10 +67,10 @@ def mars_facts():
 
     df.columns = ['description', 'Mars', 'Earth']
     df.set_index('description', inplace=True)
-    return df.to_html()
+    return df.to_html(classes="table table-striped")
 
-
-browser.quit()
+if __name__ == "__main__":
+    print(scrape_all())
 
 
 
