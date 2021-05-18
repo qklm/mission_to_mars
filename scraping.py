@@ -45,8 +45,8 @@ def featured_image(browser):
     # visit url
     url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html'
     browser.visit(url)
-
-    full_image_elem = browser.find_by_tag('button')[1]
+    full_image_elem = browser.find_by_id('full_image')[0]
+    #full_image_elem = browser.find_by_tag('button')[1]
     full_image_elem.click()
 
     # parse resulting html w/ soup
