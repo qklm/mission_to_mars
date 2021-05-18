@@ -7,8 +7,8 @@ import datetime as dt
 
 def scrape_all():
 #set up splinter
-    executable_path = {'executable_path': ChromeDriverManager().install()}
-    browser = Browser('chrome', **executable_path, headless=True)
+    executable_path = {'executable_path': "chromedriver"}
+    browser = Browser('chrome', **executable_path, headless=False)
     news_title, news_paragraph = mars_news(browser)
     data = {
         "news_title": news_title,
