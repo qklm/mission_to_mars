@@ -7,7 +7,7 @@ import datetime as dt
 
 def scrape_all():
 #set up splinter
-    executable_path = {'executable_path': ChromeDriverManager.install()}
+    executable_path = {'executable_path': 'chromedriver'}
     browser = Browser('chrome', **executable_path, headless=True)
     news_title, news_paragraph = mars_news(browser)
     data = {
@@ -36,7 +36,7 @@ def mars_news(browser):
         news_title = slide_elem.find('div', class_ = 'content_title').get_text()
         news_p = slide_elem.find('div', class_ = 'article_teaser_body').get_text()
     except AttributeError:
-        return None, None
+        return None
     return news_title, news_p
 
 
